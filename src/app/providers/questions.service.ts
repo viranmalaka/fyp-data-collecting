@@ -6,29 +6,34 @@ import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class QuestionsService {
-  private questions: FieldBase<any>[] = [];
+  private pages: Array<any> = [];
   private openType = '';
 
   constructor(private http: HttpClient) {
   }
 
   loadQuestions() {
-    if (this.openType === 'web') {
-      this.http.get('assets/questions.config.json').subscribe(data => {
-        data['pages'][0]['questions'].forEach(q => {
+    this.http.get('assets/questions.config.json').subscribe(data => {
+      data['pages'].forEach(p => {
+        console.log(p);
+        const newPage = {
+          pageHeader: p['pageHeader'],
+          questions: [],
+        };
+        p['questions'].forEach(q => {
           let newQuestion: FieldBase<any>;
           switch (q['field-type']) {
             case 'drop-down':
               newQuestion = new DropdownField({
                 key: q['key'],
-                label: q['label'][1],
+                label: q['label'],
                 order: q['order']
               });
               const quesOptions = [];
               q['options'].forEach(opt => {
                 quesOptions.push({
                   key: opt['key'],
-                  value: opt['value'][1]
+                  value: opt['value']
                 })
               });
               newQuestion['options'] = quesOptions;
@@ -36,7 +41,7 @@ export class QuestionsService {
             case 'text-box':
               newQuestion = new TextboxField({
                 key: q['key'],
-                label: q['label'][1],
+                label: q['label'],
                 value: q['value'],
                 required: q['required'],
                 order: q['order'],
@@ -44,21 +49,18 @@ export class QuestionsService {
               });
               break;
           }
-          this.questions.push(newQuestion);
+          newPage.questions.push(newQuestion);
         });
+        this.pages.push(newPage);
       });
-    } else {
-      console.log('electron here');
-      this.http.get('assets/questions.config.json').subscribe(console.log);
-    }
+    });
   }
 
-  public getQuestions(): FieldBase<any>[] {
-    return this.questions;
+  public getPages(): FieldBase<any>[] {
+    return this.pages;
   }
 
   public setOpenType(input: string): void {
     this.openType = input;
-    console.log(input);
   }
 }

@@ -16,8 +16,10 @@ import { QuestionsFieldComponent } from './components/questions-form/questions-f
 import {FieldControlService} from './questions/field-control.service';
 import {QuestionsService} from './providers/questions.service';
 import {HttpClientModule} from '@angular/common/http';
-import { FormWrapperComponent } from './components/questions/form-wrapper/form-wrapper.component';
+import { PageWrapperComponent } from './components/questions/page-wrapper/page-wrapper.component';
 import { PageComponent } from './components/questions/page/page.component';
+import {LanguageService} from './providers/language.service';
+import {DataService} from './providers/data.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { PageComponent } from './components/questions/page/page.component';
     HomeComponent,
     QuestionsFormComponent,
     QuestionsFieldComponent,
-    FormWrapperComponent,
+    PageWrapperComponent,
     PageComponent
   ],
   imports: [
@@ -35,7 +37,7 @@ import { PageComponent } from './components/questions/page/page.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ElectronService, FieldControlService, QuestionsService],
+  providers: [ElectronService, FieldControlService, QuestionsService, LanguageService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,6 +11,7 @@ import {FieldControlService} from '../../questions/field-control.service';
 export class QuestionsFormComponent implements OnInit {
 
   @Input() questions: FieldBase<any>[] = [];
+  @Input() lan = 0;
   form: FormGroup;
   payLoad = '';
 
@@ -21,6 +22,6 @@ export class QuestionsFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.form.value);
+    console.log(this.form.value);
   }
 }

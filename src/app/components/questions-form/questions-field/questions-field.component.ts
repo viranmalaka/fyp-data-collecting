@@ -11,6 +11,10 @@ export class QuestionsFieldComponent {
 
   @Input() question: FieldBase<any>;
   @Input() form: FormGroup;
-  get isValid() { return this.form.controls[this.question.key].valid; }
+  @Input() lan = 0;
+
+  get isValid() {
+    return this.form.controls[this.question.key].valid;
+  }
 
 }

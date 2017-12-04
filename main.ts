@@ -1,5 +1,8 @@
 import { app, BrowserWindow, screen } from 'electron';
+import {dbCalls} from './datastore/nedb_service';
 import * as path from 'path';
+
+const ipc = require('electron').ipcMain;
 
 let win, serve;
 const args = process.argv.slice(1);
@@ -68,3 +71,22 @@ try {
   // Catch Error
   // throw e;
 }
+
+
+ipc.on('db_calls', (event, arg) => {
+  dbCalls(arg, function (err, data) {
+    event.sender.send('db_returns', {err: err, doc: data, unq: arg['unq']});
+    // if (err) {
+    //   log('[main] db_calls - returns ' + JSON.stringify({err: err}));
+    // }
+    // log('[main] db_calls - returns ' + JSON.stringify({data: data}).substring(0, 100));
+  });
+});
+
+ipc.on('log_calls', (event, arg) => {
+  // log('[renderer] ' + arg['msg']);
+});
+
+ipc.on('pdf_calls', (event, arg) => {
+  // test1(arg);
+});

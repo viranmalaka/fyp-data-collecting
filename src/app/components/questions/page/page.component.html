@@ -1,3 +1,6 @@
-<p>
-  page works!
-</p>
+<h1>{{currentPage.pageHeader}}</h1>
+<div class="row">
+  <div class="col-auto">
+    <app-questions-form [questions]="currentPage.questions" [lan]="1"></app-questions-form>
+  </div>
+</div>
