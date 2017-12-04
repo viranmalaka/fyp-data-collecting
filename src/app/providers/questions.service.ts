@@ -6,15 +6,15 @@ import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class QuestionsService {
+  private questions: FieldBase<any>[] = [];
+  private openType = '';
 
   constructor(private http: HttpClient) {
   }
 
-  getQuestions(): Promise<any> {
-    return new Promise(resolve => {
-      const questions: FieldBase<any>[] = [];
+  loadQuestions() {
+    if (this.openType === 'web') {
       this.http.get('assets/questions.config.json').subscribe(data => {
-        console.log(data);
         data['pages'][0]['questions'].forEach(q => {
           let newQuestion: FieldBase<any>;
           switch (q['field-type']) {
@@ -44,10 +44,21 @@ export class QuestionsService {
               });
               break;
           }
-          questions.push(newQuestion);
+          this.questions.push(newQuestion);
         });
-        resolve(questions);
       });
-    });
+    } else {
+      console.log('electron here');
+      this.http.get('assets/questions.config.json').subscribe(console.log);
+    }
+  }
+
+  public getQuestions(): FieldBase<any>[] {
+    return this.questions;
+  }
+
+  public setOpenType(input: string): void {
+    this.openType = input;
+    console.log(input);
   }
 }

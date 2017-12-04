@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {QuestionsService} from "../../providers/questions.service";
+import {QuestionsService} from '../../providers/questions.service';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +11,8 @@ export class HomeComponent implements OnInit {
   questions: any[];
 
   constructor(service: QuestionsService) {
-    service.getQuestions().then(data => {
-      this.questions = data;
-    });
+    service.loadQuestions();
   }
-
 
   ngOnInit() {
   }

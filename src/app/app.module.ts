@@ -16,13 +16,17 @@ import { QuestionsFieldComponent } from './components/questions-form/questions-f
 import {FieldControlService} from './questions/field-control.service';
 import {QuestionsService} from './providers/questions.service';
 import {HttpClientModule} from '@angular/common/http';
+import { FormWrapperComponent } from './components/questions/form-wrapper/form-wrapper.component';
+import { PageComponent } from './components/questions/page/page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     QuestionsFormComponent,
-    QuestionsFieldComponent
+    QuestionsFieldComponent,
+    FormWrapperComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,
