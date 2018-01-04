@@ -16,10 +16,12 @@ import { QuestionsFieldComponent } from './components/questions-form/questions-f
 import {FieldControlService} from './questions/field-control.service';
 import {QuestionsService} from './providers/questions.service';
 import {HttpClientModule} from '@angular/common/http';
-import { PageWrapperComponent } from './components/questions/page-wrapper/page-wrapper.component';
 import { PageComponent } from './components/questions/page/page.component';
 import {LanguageService} from './providers/language.service';
 import {DataService} from './providers/data.service';
+import { HomePageComponent } from './new-comp/pages/home-page/home-page.component';
+import { MainWrapperComponent } from './new-comp/main-wrapper/main-wrapper.component';
+import { QPage1Component } from './new-comp/pages/q-page-1/q-page-1.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +29,10 @@ import {DataService} from './providers/data.service';
     HomeComponent,
     QuestionsFormComponent,
     QuestionsFieldComponent,
-    PageWrapperComponent,
-    PageComponent
+    PageComponent,
+    HomePageComponent,
+    MainWrapperComponent,
+    QPage1Component
   ],
   imports: [
     BrowserModule,

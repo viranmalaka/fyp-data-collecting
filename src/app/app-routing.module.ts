@@ -1,14 +1,12 @@
-import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PageComponent} from './components/questions/page/page.component';
-import {PageWrapperComponent} from './components/questions/page-wrapper/page-wrapper.component';
+import {MainWrapperComponent} from './new-comp/main-wrapper/main-wrapper.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'questions', component: PageWrapperComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  // { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  // { path: 'home', component:  },
+  // { path: 'questions', component: PageWrapperComponent },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: MainWrapperComponent }
 ];
 
 @NgModule({

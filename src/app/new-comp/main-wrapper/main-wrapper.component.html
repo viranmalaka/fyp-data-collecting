@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col">
+    <nav style="margin-top: 20px;" *ngIf="page != 0">
+      <ul class="pagination justify-content-end">
+        <li class="page-item" [ngClass]="{'active': page == 1}"><a class="page-link" (click)="setPage(1)">1</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 2}"><a class="page-link" (click)="setPage(2)">2</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 3}"><a class="page-link" (click)="setPage(3)">3</a></li>
+        <li class="page-item"><a class="page-link">End</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="row align-items-center">
+  <div [ngSwitch]="page">
+    <app-home-page *ngSwitchCase="0" (start)="page = 1"></app-home-page>
+    <app-q-page-1 *ngSwitchCase="1"></app-q-page-1>
+  </div>
+</div>
