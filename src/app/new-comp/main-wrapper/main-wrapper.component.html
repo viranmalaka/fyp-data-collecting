@@ -11,8 +11,8 @@
   </div>
 </div>
 <div class="row align-items-center">
-  <div [ngSwitch]="page">
+  <div [ngSwitch]="page" class="col">
     <app-home-page *ngSwitchCase="0" (start)="page = 1"></app-home-page>
-    <app-q-page-1 *ngSwitchCase="1"></app-q-page-1>
+    <app-q-page-1 *ngSwitchCase="1" [langData]="questionsData" [lang]="lang"></app-q-page-1>
   </div>
 </div>

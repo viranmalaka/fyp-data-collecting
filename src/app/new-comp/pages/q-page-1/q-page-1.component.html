@@ -1,3 +1,19 @@
-<p>
-  q-page-1 works!
-</p>
+<div class="col-12">
+  <div class="form-group">
+    <label>{{langData['p1-1']['questions'][lang]}}</label>
+    <input type="text" class="form-control" name="{{langData['p1-1']['key']}}">
+  </div>
+  <div class="form-group">
+    <label>{{langData['p1-2']['questions'][lang]}}</label>
+    <select name="{{langData['p1-2']['key']}}" class="form-control" >
+      <option *ngFor="let opt of langData['p1-2']['options']" [value]="opt[0]">{{opt[lang + 1]}}</option>
+    </select>
+  </div>
+  <div class="form-check">
+    <label>{{langData['p1-3']['questions'][lang]}}</label>
+    <select name="{{langData['p1-3']['key']}}" class="form-control" >
+      <option *ngFor="let opt of langData['p1-3']['options']" [value]="opt[0]">{{opt[lang + 1]}}</option>
+    </select>
+  </div>
+
+</div>
