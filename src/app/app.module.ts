@@ -22,6 +22,10 @@ import {DataService} from './providers/data.service';
 import { HomePageComponent } from './new-comp/pages/home-page/home-page.component';
 import { MainWrapperComponent } from './new-comp/main-wrapper/main-wrapper.component';
 import { QPage1Component } from './new-comp/pages/q-page-1/q-page-1.component';
+import { DynamicOptionsComponent } from './components/dynamic-options/dynamic-options.component';
+import { QPage2Component } from './new-comp/pages/q-page-2/q-page-2.component';
+import { QPage3Component } from './new-comp/pages/q-page-3/q-page-3.component';
+import { QPage4Component } from './new-comp/pages/q-page-4/q-page-4.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +36,16 @@ import { QPage1Component } from './new-comp/pages/q-page-1/q-page-1.component';
     PageComponent,
     HomePageComponent,
     MainWrapperComponent,
-    QPage1Component
+    QPage1Component,
+    DynamicOptionsComponent,
+    QPage2Component,
+    QPage3Component,
+    QPage4Component
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
   ],

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-q-page-1',
@@ -9,7 +9,8 @@ export class QPage1Component implements OnInit {
 
   @Input() langData;
   @Input() lang;
-
+  @Input() fullAnswer;
+  @Output() changePage = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {

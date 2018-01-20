@@ -1,19 +1,17 @@
 <div class="col-12">
   <div class="form-group">
     <label>{{langData['p1-1']['questions'][lang]}}</label>
-    <input type="text" class="form-control" name="{{langData['p1-1']['key']}}">
+    <input type="text" class="form-control" [(ngModel)]="fullAnswer[langData['p1-1']['key']]">
   </div>
   <div class="form-group">
     <label>{{langData['p1-2']['questions'][lang]}}</label>
-    <select name="{{langData['p1-2']['key']}}" class="form-control" >
+    <select class="form-control"  [(ngModel)]="fullAnswer[langData['p1-2']['key']]">
       <option *ngFor="let opt of langData['p1-2']['options']" [value]="opt[0]">{{opt[lang + 1]}}</option>
     </select>
   </div>
-  <div class="form-check">
-    <label>{{langData['p1-3']['questions'][lang]}}</label>
-    <select name="{{langData['p1-3']['key']}}" class="form-control" >
-      <option *ngFor="let opt of langData['p1-3']['options']" [value]="opt[0]">{{opt[lang + 1]}}</option>
-    </select>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" (click)="changePage.emit(true)">Next >></button>
+    </div>
   </div>
-
 </div>

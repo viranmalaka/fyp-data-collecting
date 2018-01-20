@@ -1,0 +1,58 @@
+<div class="col-12">
+
+  <div class="form-group">
+    <label>{{langData['p3-1']['questions'][lang]}}</label>
+    <app-dynamic-options [inputOptions]="fullAnswer[langData['p3-1']['key']]"></app-dynamic-options>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col">
+      <label>{{langData['p3-2']['questions'][lang]}}</label>
+      <select class="form-control" [(ngModel)]="fullAnswer[langData['p3-2']['key']]">
+        <option *ngFor="let opt of langData['p3-2']['options']" [value]="opt[0]">{{opt[lang + 1]}}</option>
+      </select>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>{{langData['p3-3']['questions'][lang]}}</label>
+        <input type="text" class="form-control" [(ngModel)]="fullAnswer[langData['p3-3']['key']]">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label>{{langData['p3-4']['questions'][lang]}}</label>
+      <select class="form-control" [(ngModel)]="fullAnswer[langData['p3-4']['key']]">
+        <option *ngFor="let opt of langData['p3-4']['options']" [value]="opt[0]">{{opt[lang + 1]}}</option>
+      </select>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>{{langData['p3-5']['questions'][lang]}}</label>
+        <input type="text" class="form-control" [(ngModel)]="fullAnswer[langData['p3-5']['key']]">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5">
+      <label>{{langData['p3-6']['questions'][lang]}}</label>
+      <input type="number" [(ngModel)]="count">
+    </div>
+    <div class="col-7">
+      <label *ngIf="count!==0">{{langData['p3-6']['questions_2'][lang]}}</label>
+      <div class="form-inline form-group" *ngFor="let x of getArray()">
+        <label class="col-1">{{x + 1}} </label>
+        <select class="col-5 form-control" [(ngModel)]="fullAnswer[langData['p3-6']['key'] + '-' + x]">
+          <option *ngFor="let opt of langData['p3-6']['options']" [value]="opt[0]">{{opt[lang + 1]}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" (click)="changePage.emit(true)">Next >></button>
+    </div>
+  </div>
+</div>

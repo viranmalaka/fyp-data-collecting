@@ -5,6 +5,12 @@
         <li class="page-item" [ngClass]="{'active': page == 1}"><a class="page-link" (click)="setPage(1)">1</a></li>
         <li class="page-item" [ngClass]="{'active': page == 2}"><a class="page-link" (click)="setPage(2)">2</a></li>
         <li class="page-item" [ngClass]="{'active': page == 3}"><a class="page-link" (click)="setPage(3)">3</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 4}"><a class="page-link" (click)="setPage(4)">4</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 5}"><a class="page-link" (click)="setPage(5)">5</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 6}"><a class="page-link" (click)="setPage(6)">6</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 7}"><a class="page-link" (click)="setPage(7)">7</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 8}"><a class="page-link" (click)="setPage(8)">8</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 9}"><a class="page-link" (click)="setPage(9)">9</a></li>
         <li class="page-item"><a class="page-link">End</a></li>
       </ul>
     </nav>
@@ -12,7 +18,10 @@
 </div>
 <div class="row align-items-center">
   <div [ngSwitch]="page" class="col">
-    <app-home-page *ngSwitchCase="0" (start)="page = 1"></app-home-page>
-    <app-q-page-1 *ngSwitchCase="1" [langData]="questionsData" [lang]="lang"></app-q-page-1>
+    <app-home-page *ngSwitchCase="0" (start)="startQuiz()"></app-home-page>
+    <app-q-page-1 *ngSwitchCase="1" [langData]="questionsData" [lang]="lang" [fullAnswer]="fullAnswer" (changePage)="setPage(page + 1)"></app-q-page-1>
+    <app-q-page-2 *ngSwitchCase="2" [langData]="questionsData" [lang]="lang" [fullAnswer]="fullAnswer" (changePage)="setPage(page + 1)"></app-q-page-2>
+    <app-q-page-3 *ngSwitchCase="3" [langData]="questionsData" [lang]="lang" [fullAnswer]="fullAnswer" (changePage)="setPage(page + 1)"></app-q-page-3>
+    <app-q-page-4 *ngSwitchCase="4" [langData]="questionsData" [lang]="lang" [fullAnswer]="fullAnswer" (changePage)="setPage(page + 1)"></app-q-page-4>
   </div>
 </div>

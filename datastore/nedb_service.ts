@@ -48,7 +48,7 @@ export let dbCalls = (arg, next) => {
     case operations.count:
       return d.count(arg['query'], next);
     case operations.update:
-      return d.update(arg['query'], arg['newObj'], next);
+      return d.update(arg['query'], {$set: arg['newObj']}, next);
     case operations.remove:
       return d.remove(arg['query'], {}, next);
   }
