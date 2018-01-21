@@ -8,11 +8,11 @@
     <input type="text" class="form-control" [(ngModel)]="inputOptions.other.name">
   </div>
 </div>
-
+<br>
 <div class="form">
   <fieldset class="form-group">
     <div class="row" *ngFor="let x of inputOptions.options">
-      <label class="col-form-label col-sm-5 pt-0" *ngIf="x.checked.mainSelect">{{x.name}}</label>
+      <label class="col-form-label col-sm-3 pt-0" *ngIf="x.checked.mainSelect">{{x.name}}</label>
       <div class="col-sm-4 form-inline" *ngIf="x.checked.mainSelect">
         <div class="form-check form-check-inline" *ngFor="let y of inputOptions.subOptions">
           <input class="form-check-input" type="checkbox" [(ngModel)]="x.checked.subSelect[y.key]"
@@ -38,7 +38,7 @@
     </div>
 
     <div class="row" *ngIf="inputOptions.other.active && inputOptions.other.name">
-      <label class="col-form-label col-sm-5 pt-0">{{inputOptions.other.name}}</label>
+      <label class="col-form-label col-sm-3 pt-0">{{inputOptions.other.name}}</label>
       <div class="col-sm-4 form-inline">
         <div class="form-check form-check-inline" *ngFor="let y of inputOptions.subOptions">
           <input class="form-check-input" type="checkbox" [(ngModel)]="inputOptions.other.checked.subSelect[y.key]"
@@ -55,7 +55,9 @@
                  id="{{inputOptions.other.name}}inner"
                  value="{{inputOptions.other.name}}inner"
                  [(ngModel)]="inputOptions.other.checked.subSelect['place']">
-          <label class="form-check-label" for="{{inputOptions.other.name}}inner">Inside</label>
+          <label class="form-check-label" for="{{inputOptions.other.name}}inner">
+            {{ ['in school', 'පාසල තුල'][0] }}
+          </label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio"
@@ -63,7 +65,9 @@
                  id="{{inputOptions.other.name}}outter"
                  value="{{inputOptions.other.name}}outter"
                  [(ngModel)]="inputOptions.other.checked.subSelect['place']">
-          <label class="form-check-label" for="{{inputOptions.other.name}}outter">Outside</label>
+          <label class="form-check-label" for="{{inputOptions.other.name}}outter">
+            {{[ 'not school', 'පාසලෙන් පිටත' ][0]}}
+          </label>
         </div>
       </div>
     </div>

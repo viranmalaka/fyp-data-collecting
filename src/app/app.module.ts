@@ -26,6 +26,10 @@ import { DynamicOptionsComponent } from './components/dynamic-options/dynamic-op
 import { QPage2Component } from './new-comp/pages/q-page-2/q-page-2.component';
 import { QPage3Component } from './new-comp/pages/q-page-3/q-page-3.component';
 import { QPage4Component } from './new-comp/pages/q-page-4/q-page-4.component';
+import { QltPage1Component } from './new-comp/pages/qlt-page-1/qlt-page-1.component';
+import { QltPage2Component } from './new-comp/pages/qlt-page-2/qlt-page-2.component';
+import { QltPage3Component } from './new-comp/pages/qlt-page-3/qlt-page-3.component';
+import { ThanksPageComponent } from './new-comp/pages/thanks-page/thanks-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { QPage4Component } from './new-comp/pages/q-page-4/q-page-4.component';
     DynamicOptionsComponent,
     QPage2Component,
     QPage3Component,
-    QPage4Component
+    QPage4Component,
+    QltPage1Component,
+    QltPage2Component,
+    QltPage3Component,
+    ThanksPageComponent
   ],
   imports: [
     BrowserModule,
