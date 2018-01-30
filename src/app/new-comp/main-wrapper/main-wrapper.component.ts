@@ -8,6 +8,7 @@ import { DataService } from '../../providers/data.service';
 })
 export class MainWrapperComponent implements OnInit {
   page = 0;
+  startTime;
 
   allSubject = [
     ['sinhala', '', 'සිංහල භාෂාව'],
@@ -302,6 +303,7 @@ export class MainWrapperComponent implements OnInit {
       {key: '3', name: ['sometimes', 'සමහරවිට අදාලවේ']},
       {key: '4', name: ['almost always', 'අදාලවේ']},
       {key: '5', name: ['always', 'සෑමවිටම අදාලවේ']},
+      {key: '6', name: ['Do not understand', 'අදහසක් නැත']},
     ]
   };
 
@@ -317,12 +319,14 @@ export class MainWrapperComponent implements OnInit {
 
   setPage(num: number) {
     this.page = num;
+    this.fullAnswer['time-taken'] = new Date().valueOf() - this.startTime;
     console.log(this.fullAnswer);
     this.dataService.edit('record', {_id: this.fullAnswer['_id']}, this.fullAnswer);
   }
 
   startQuiz() {
     this.page = 1;
+    this.startTime = new Date();
     this.dataService.insert('record', {}).then(data => {
       this.fullAnswer['_id'] = data.doc._id;
     });

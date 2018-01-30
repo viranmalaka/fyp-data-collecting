@@ -1,21 +1,28 @@
-<div class="row" style="height: 50px;">
-  <!--<div class="col">-->
-    <!--<nav style="margin-top: 20px;" *ngIf="page != 0">-->
-      <!--<ul class="pagination justify-content-end">-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 1}"><a class="page-link" (click)="setPage(1)">1</a></li>-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 2}"><a class="page-link" (click)="setPage(2)">2</a></li>-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 3}"><a class="page-link" (click)="setPage(3)">3</a></li>-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 4}"><a class="page-link" (click)="setPage(4)">4</a></li>-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 5}"><a class="page-link" (click)="setPage(5)">5</a></li>-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 6}"><a class="page-link" (click)="setPage(6)">6</a></li>-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 7}"><a class="page-link" (click)="setPage(7)">7</a></li>-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 8}"><a class="page-link" (click)="setPage(8)">8</a></li>-->
-        <!--<li class="page-item" [ngClass]="{'active': page == 9}"><a class="page-link" (click)="setPage(9)">9</a></li>-->
-        <!--<li class="page-item"><a class="page-link">End</a></li>-->
-      <!--</ul>-->
-    <!--</nav>-->
-  <!--</div>-->
+<div class="row" style="height: 50px;" *ngIf="page !== 0 && page !== 9">
+  <div class="col">
+    <div style="padding-top:10px; height: 40px;">
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': (page - 1) * 12.5 + '%'}" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-auto">
+    <nav style="margin-top: 10px;">
+      <ul class="pagination justify-content-end">
+        <li class="page-item" [ngClass]="{'active': page == 1}"><a class="page-link" (click)="setPage(1)">1</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 2}"><a class="page-link" (click)="setPage(2)">2</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 3}"><a class="page-link" (click)="setPage(3)">3</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 4}"><a class="page-link" (click)="setPage(4)">4</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 5}"><a class="page-link" (click)="setPage(5)">5</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 6}"><a class="page-link" (click)="setPage(6)">6</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 7}"><a class="page-link" (click)="setPage(7)">7</a></li>
+        <li class="page-item" [ngClass]="{'active': page == 8}"><a class="page-link" (click)="setPage(8)">8</a></li>
+      </ul>
+    </nav>
+  </div>
+
 </div>
+
 <div class="row align-items-center">
   <div [ngSwitch]="page" class="col">
     <app-home-page *ngSwitchCase="0" (start)="startQuiz()"></app-home-page>
@@ -27,7 +34,8 @@
     <app-qlt-page-1 *ngSwitchCase="5" [langData]="questionsData" [lang]="lang" [fullAnswer]="fullAnswer" (changePage)="setPage(page + 1)"></app-qlt-page-1>
     <app-qlt-page-2 *ngSwitchCase="6" [langData]="questionsData" [lang]="lang" [fullAnswer]="fullAnswer" (changePage)="setPage(page + 1)"></app-qlt-page-2>
     <app-qlt-page-3 *ngSwitchCase="7" [langData]="questionsData" [lang]="lang" [fullAnswer]="fullAnswer" (changePage)="setPage(page + 1)"></app-qlt-page-3>
+    <app-qlt-page-4 *ngSwitchCase="8" [langData]="questionsData" [lang]="lang" [fullAnswer]="fullAnswer" (changePage)="setPage(page + 1)"></app-qlt-page-4>
 
-    <app-thanks-page *ngSwitchCase="8" [lang]="lang" (startAgain)="startAgain()"></app-thanks-page>
+    <app-thanks-page *ngSwitchCase="9" [lang]="lang" (startAgain)="startAgain()"></app-thanks-page>
   </div>
 </div>

@@ -1,0 +1,85 @@
+<div class="col-12">
+  <div class="form-group">
+    <label>{{langData['qlt-6']['qNumber']}}. {{langData['qlt-6']['questions'][lang]}}</label>
+    <div class="form-inline" style="padding-left: 20px;">
+      <div style="padding-right:20px;" class="form-check form-check-inline" *ngFor="let ans of langData['qlt-options']">
+        <input class="form-check-input" type="radio"
+               id="qlt{{ans.key + '_' +langData['qlt-6']['qNumber']}}"
+               value="{{ans.key}}"
+               name="{{'qlt' + langData['qlt-6']['type']+ '_' + langData['qlt-6']['qNumber']}}"
+               [(ngModel)]="fullAnswer['qlt_' + langData['qlt-6']['qNumber']]"
+        >
+        <label class="form-check-label" for="qlt{{ans.key + '_' +langData['qlt-6']['qNumber']}}">{{ans.name[lang]}}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{langData['qlt-7']['qNumber']}}. {{langData['qlt-7']['questions'][lang]}}</label>
+    <div class="form-inline" style="padding-left: 20px;">
+      <div style="padding-right:20px;" class="form-check form-check-inline" *ngFor="let ans of langData['qlt-options']">
+        <input class="form-check-input" type="radio"
+               id="qlt{{ans.key + '_' +langData['qlt-7']['qNumber']}}"
+               value="{{ans.key}}"
+               name="{{'qlt' + langData['qlt-7']['qNumber']}}"
+               [(ngModel)]="fullAnswer['qlt_' + langData['qlt-7']['type']+ '_' + langData['qlt-7']['qNumber']]"
+        >
+        <label class="form-check-label" for="qlt{{ans.key + '_' +langData['qlt-7']['qNumber']}}">{{ans.name[lang]}}</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label>{{langData['qlt-8']['qNumber']}}. {{langData['qlt-8']['questions'][lang]}}</label>
+    <div class="form-inline" style="padding-left: 20px;">
+      <div style="padding-right:20px;" class="form-check form-check-inline" *ngFor="let ans of langData['qlt-options']">
+        <input class="form-check-input" type="radio"
+               id="qlt{{ans.key + '_' +langData['qlt-8']['qNumber']}}"
+               value="{{ans.key}}"
+               name="{{'qlt' + langData['qlt-8']['qNumber']}}"
+               [(ngModel)]="fullAnswer['qlt_' + langData['qlt-8']['type']+ '_' + langData['qlt-8']['qNumber']]"
+        >
+        <label class="form-check-label" for="qlt{{ans.key + '_' +langData['qlt-8']['qNumber']}}">{{ans.name[lang]}}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{langData['qlt-9']['qNumber']}}. {{langData['qlt-9']['questions'][lang]}}</label>
+    <div class="form-inline" style="padding-left: 20px;">
+      <div style="padding-right:20px;" class="form-check form-check-inline" *ngFor="let ans of langData['qlt-options']">
+        <input class="form-check-input" type="radio"
+               id="qlt{{ans.key + '_' +langData['qlt-9']['qNumber']}}"
+               value="{{ans.key}}"
+               name="{{'qlt' + langData['qlt-9']['qNumber']}}"
+               [(ngModel)]="fullAnswer['qlt_' + langData['qlt-9']['type']+ '_' + langData['qlt-9']['qNumber']]"
+        >
+        <label class="form-check-label" for="qlt{{ans.key + '_' +langData['qlt-9']['qNumber']}}">{{ans.name[lang]}}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{langData['qlt-10']['qNumber']}}. {{langData['qlt-10']['questions'][lang]}}</label>
+    <div class="form-inline" style="padding-left: 20px;">
+      <div style="padding-right:20px;" class="form-check form-check-inline" *ngFor="let ans of langData['qlt-options']">
+        <input class="form-check-input" type="radio"
+               id="qlt{{ans.key + '_' +langData['qlt-10']['qNumber']}}"
+               value="{{ans.key}}"
+               name="{{'qlt' + langData['qlt-10']['type']+ '_' + langData['qlt-10']['qNumber']}}"
+               [(ngModel)]="fullAnswer['qlt_' + langData['qlt-10']['qNumber']]"
+        >
+        <label class="form-check-label" for="qlt{{ans.key + '_' +langData['qlt-10']['qNumber']}}">{{ans.name[lang]}}</label>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" (click)="changePage.emit(true)">Next >></button>
+    </div>
+  </div>
+</div>

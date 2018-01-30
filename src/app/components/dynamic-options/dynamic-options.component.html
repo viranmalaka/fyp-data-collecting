@@ -27,12 +27,12 @@
           <input class="form-check-input" type="radio"
                  id="{{x.key}}inner" name="{{x.key}}place" value="{{x.key}}inner"
                  [(ngModel)]="x.checked.subSelect['place']">
-          <label class="form-check-label" for="{{x.key}}inner">Inside</label>
+          <label class="form-check-label" for="{{x.key}}inner">{{ ['in school', 'පාසල තුල'][1] }}</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" id="{{x.key}}outter" name="{{x.key}}place"
                  value="{{x.key}}outter" [(ngModel)]="x.checked.subSelect['place']">
-          <label class="form-check-label" for="{{x.key}}outter">Outside</label>
+          <label class="form-check-label" for="{{x.key}}outter">{{[ 'not school', 'පාසලෙන් පිටත' ][1]}}</label>
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
                  value="{{inputOptions.other.name}}inner"
                  [(ngModel)]="inputOptions.other.checked.subSelect['place']">
           <label class="form-check-label" for="{{inputOptions.other.name}}inner">
-            {{ ['in school', 'පාසල තුල'][0] }}
+            {{ ['in school', 'පාසල තුල'][1] }}
           </label>
         </div>
         <div class="form-check form-check-inline">
@@ -66,7 +66,7 @@
                  value="{{inputOptions.other.name}}outter"
                  [(ngModel)]="inputOptions.other.checked.subSelect['place']">
           <label class="form-check-label" for="{{inputOptions.other.name}}outter">
-            {{[ 'not school', 'පාසලෙන් පිටත' ][0]}}
+            {{[ 'not school', 'පාසලෙන් පිටත' ][1]}}
           </label>
         </div>
       </div>

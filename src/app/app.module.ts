@@ -30,6 +30,7 @@ import { QltPage1Component } from './new-comp/pages/qlt-page-1/qlt-page-1.compon
 import { QltPage2Component } from './new-comp/pages/qlt-page-2/qlt-page-2.component';
 import { QltPage3Component } from './new-comp/pages/qlt-page-3/qlt-page-3.component';
 import { ThanksPageComponent } from './new-comp/pages/thanks-page/thanks-page.component';
+import { QltPage4Component } from './new-comp/pages/qlt-page-4/qlt-page-4.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ThanksPageComponent } from './new-comp/pages/thanks-page/thanks-page.co
     QltPage1Component,
     QltPage2Component,
     QltPage3Component,
-    ThanksPageComponent
+    ThanksPageComponent,
+    QltPage4Component
   ],
   imports: [
     BrowserModule,
